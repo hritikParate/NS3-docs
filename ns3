@@ -1,0 +1,18 @@
+
+#include "ns3/netanim-module.h"
+#include "ns3/mobility-module.h"
+
+p2p.EnablePcapAll ("simple-global-routing");
+  
+MobilityHelper mobility;
+mobility.SetMobilityModel("ns3::ConstantPositionMobilityModel");
+mobility.Install(c);
+  
+  
+AnimationInterface anim("simple-global-routing.xml");
+AnimationInterface::SetConstantPosition(c.Get(0),10,10);
+AnimationInterface::SetConstantPosition(c.Get(1),10,35);
+AnimationInterface::SetConstantPosition(c.Get(2),20,25);
+AnimationInterface::SetConstantPosition(c.Get(3),35,25);
+anim.EnablePacketMetadata(true);
+  
