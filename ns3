@@ -15,4 +15,31 @@ AnimationInterface::SetConstantPosition(c.Get(1),10,35);
 AnimationInterface::SetConstantPosition(c.Get(2),20,25);
 AnimationInterface::SetConstantPosition(c.Get(3),35,25);
 anim.EnablePacketMetadata(true);
-  
+
+
+
+
+
+
+./NetAnim
+
+
+sgr.plt file:
+
+set terminal pdf
+set output "Result.pdf"
+set title "Simple Global Routing"
+set xlabel "Nodes"
+set ylabel "Delay time"
+plot "simple-global-routing-data.txt" using 1:3 with linespoint title "packets" lw 5
+
+
+
+
+gnuplot sgr.plt
+
+wireshark filename.pcap
+
+
+
+
